@@ -5,6 +5,8 @@ steps:
         "build",
         "-t",
         "${_GCR_REGION}-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/rust:$SHORT_SHA",
+        "-t",
+        "${_GCR_REGION}-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/rust",
         ".",
       ]
 

@@ -10,4 +10,4 @@ RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
 
 EXPOSE 22
 
-CMD systemctl start sshd
+ENTRYPOINT ["/bin/bash", “-c” "systemctl start sshd"]

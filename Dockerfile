@@ -1,8 +1,6 @@
 FROM archlinux:latest
 
-RUN pacman -Syu yay
-
-RUN yay cmake clang git openssh
+RUN pacman -Syu cmake clang git openssh
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 

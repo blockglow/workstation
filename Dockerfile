@@ -2,7 +2,9 @@ FROM archlinux:latest
 
 RUN yes | pacman -Syu cmake clang git openssh
 
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y 
+
+RUN rustup toolchain install nightly
 
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 

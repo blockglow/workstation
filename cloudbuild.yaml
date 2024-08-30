@@ -1,0 +1,17 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "${_GCR_REGION}-docker.pkg.dev/$PROJECT_ID/$REPO_NAME:$SHORT_SHA",
+        ".",
+      ]
+
+  # push the artifact to a GCR repository
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "${_GCR_REGION}-docker.pkg.dev/$PROJECT_ID/$REPO_NAME:$SHORT_SHA"]
+substitutions:
+  _GCR_REGION: us-central1
+options:
+  logging: CLOUD_LOGGING_ONLY

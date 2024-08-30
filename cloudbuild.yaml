@@ -4,13 +4,13 @@ steps:
       [
         "build",
         "-t",
-        "${_GCR_REGION}-docker.pkg.dev/$PROJECT_ID/$REPO_NAME:$SHORT_SHA",
+        "${_GCR_REGION}-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/rust:$SHORT_SHA",
         ".",
       ]
 
   # push the artifact to a GCR repository
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "${_GCR_REGION}-docker.pkg.dev/$PROJECT_ID/$REPO_NAME:$SHORT_SHA"]
+    args: ["push", "${_GCR_REGION}-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/rust:$SHORT_SHA"]
 substitutions:
   _GCR_REGION: us-central1
 options:

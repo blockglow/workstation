@@ -12,7 +12,7 @@ steps:
 
   # push the artifact to a GCR repository
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "--all-tags", "${_GCR_REGION}-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/rust:latest"]
+    args: ["push", "--all-tags", "${_GCR_REGION}-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/rust"]
 substitutions:
   _GCR_REGION: us-central1
 options:
